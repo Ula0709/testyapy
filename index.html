@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            animation: backgroundChange 8s infinite; /* Aumentar duración de la animación */
+        }
+
+        @keyframes backgroundChange {
+            0% { background-color: #21aceb; }
+            50% { background-color: #ED8C38; }
+            100% { background-color: #21aceb; }
+        }
+        
+        h4 {
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 18px; 
+            font-weight: 600; 
+            color: #fcfafa; 
+        }
+
+        .login-container {
+            background-color: white;
+            padding: 50px; 
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); 
+            width: 230px; 
+            text-align: center;
+        }
+
+        .greeting {
+            font-size: 22px; 
+            margin-bottom: 20px;
+            font-weight: 500; 
+            color: #555; 
+        }
+
+        .logo-pequeño {
+            width: 55px;
+            margin: 0 0 10px -15px;
+        }
+
+        .input-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .flag {
+            width: 20px;
+            margin: 5px;
+            vertical-align: middle;
+        }
+
+        input[type="tel"] {
+            flex-grow: 1;
+            padding: 12px;
+            border: none;
+            font-size: 16px;
+            color: #333; 
+            border-radius: 5px; 
+            outline: none; 
+        }
+
+        input[type="tel"]:focus {
+            box-shadow: 0 0 5px rgba(40, 128, 223, 0.5); 
+        }
+
+        button {
+            width: 17.5%; 
+            padding: 12px;
+            background-color: #2880df; /* Color original del botón */
+            color: white;
+            border: none;
+            border-radius: 30px; 
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background-color 0.3s; 
+        }
+
+        button:hover {
+            background-color: #4397f1; /* Color al pasar el mouse */
+        }
+
+        .recordar-celular {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #555;
+            margin-top: 15px;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            font-size: 14px; 
+            color: #555;
+            margin-bottom: 10px; 
+        }
+
+        .first-time-text {
+            font-size: 12px; 
+            color: #555; 
+            text-align: center; 
+            margin-top: 10px;
+        }
+
+        .register-text {
+            font-size: 12px; 
+            color: #2880df; /* Color original del texto "Regístrate" */
+            font-weight: bold; 
+            text-align: center; 
+            margin-top: 5px;
+        }
+
+        .version-text {
+            font-size: 11px; 
+            color: #555; 
+            margin-top: 20px; 
+        }
+
+        /* Estilos para el switch */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 34px;
+            height: 20px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 20px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 2px;
+            bottom: 2px;
+            background-color: white;
+            border-radius: 50%;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #2880df; /* Color del switch al activarse */
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(14px);
+        }
+    </style>
+</head>
+<body>
+    <h4>Iniciar Sesión</h4>
+    <div class="login-container">
+        <img src="https://imgs.search.brave.com/Dau3tX1KTyOLi9XfT6ATj6hPJGv6aOskcigDkRe5ems/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YmdlbmVyYWwuY29t/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDIz/LzA2L3lhcHB5LWxv/Z28tY3VlbnRhcy5z/dmc" alt="Logo Pequeño" class="logo-pequeño">
+        <div class="greeting">¡Hola! 👋</div>
+        <form id="login-form">
+            <p class="question">¿Cuál es tu número de celular registrado?</p>
+            <div class="input-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Flag_of_Panama.svg" alt="Bandera de Panamá" class="flag">
+                <span style="line-height: 20px;">+507</span> <!-- Modificación aquí -->
+                <input type="tel" id="phone" name="phone" placeholder="6000-0000" required>
+            </div>
+            <div class="recordar-celular">
+                <span>Recordar celular</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </form>
+        <p class="first-time-text">¿Primera vez en el nuevo Yappy App?</p>
+        <p class="register-text">Regístrate</p>
+        <p class="version-text">Versión 2.0.31888</p>
+    </div>
+    <button type="submit">Siguiente</button>
+</body>
+</html>
