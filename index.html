@@ -10,10 +10,10 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            animation: backgroundChange 8s infinite; /* Aumentar duración de la animación */
+            align-items: flex-start; 
+            height: 90vh;
+            margin: 5;
+            animation: backgroundChange 8s infinite; 
         }
 
         @keyframes backgroundChange {
@@ -23,11 +23,12 @@
         }
         
         h4 {
-            margin-bottom: 25px;
-            text-align: center;
-            font-size: 18px; 
+            margin-bottom: 30px;
+            text-align: center; 
+            font-size: 17px; 
             font-weight: 600; 
             color: #fcfafa; 
+            margin-left: 300px; /* Ajustar margen izquierdo */
         }
 
         .login-container {
@@ -37,6 +38,7 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); 
             width: 230px; 
             text-align: center;
+            margin-left: 200px; 
         }
 
         .greeting {
@@ -81,21 +83,21 @@
         }
 
         button {
-            width: 17.5%; 
-            padding: 12px;
-            background-color: #2880df; /* Color original del botón */
+            width: 10%; 
+            padding: 11px;
+            background-color: #2880df; 
             color: white;
             border: none;
             border-radius: 30px; 
             cursor: pointer;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: bold;
-            margin-top: 20px;
+            margin: 20px 200px 0 260px; /* Ajustar margen izquierdo */
             transition: background-color 0.3s; 
         }
 
         button:hover {
-            background-color: #4397f1; /* Color al pasar el mouse */
+            background-color: #4397f1; 
         }
 
         .recordar-celular {
@@ -123,7 +125,7 @@
 
         .register-text {
             font-size: 12px; 
-            color: #2880df; /* Color original del texto "Regístrate" */
+            color: #2880df; 
             font-weight: bold; 
             text-align: center; 
             margin-top: 5px;
@@ -174,7 +176,7 @@
         }
 
         input:checked + .slider {
-            background-color: #2880df; /* Color del switch al activarse */
+            background-color: #2880df; 
         }
 
         input:checked + .slider:before {
@@ -191,7 +193,7 @@
             <p class="question">¿Cuál es tu número de celular registrado?</p>
             <div class="input-container">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Flag_of_Panama.svg" alt="Bandera de Panamá" class="flag">
-                <span style="line-height: 20px;">+507</span> <!-- Modificación aquí -->
+                <span style="line-height: 20px;">+507</span> 
                 <input type="tel" id="phone" name="phone" placeholder="6000-0000" required>
             </div>
             <div class="recordar-celular">
