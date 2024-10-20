@@ -10,9 +10,9 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: flex-start; 
+            align-items: center; /* Cambiado de flex-start a center */
             height: 90vh;
-            margin: 5;
+            margin: 0; /* Cambiado de 5 a 0 */
             animation: backgroundChange 8s infinite; 
         }
 
@@ -28,7 +28,6 @@
             font-size: 17px; 
             font-weight: 600; 
             color: #fcfafa; 
-            margin-left: 300px; /* Ajustar margen izquierdo */
         }
 
         .login-container {
@@ -38,7 +37,6 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); 
             width: 230px; 
             text-align: center;
-            margin-left: 750px; 
         }
 
         .greeting {
@@ -50,7 +48,7 @@
 
         .logo-pequeño {
             width: 55px;
-            margin: 0 0 10px -15px;
+            margin: 0 0 10px;
         }
 
         .input-container {
@@ -83,7 +81,7 @@
         }
 
         button {
-            width: 10%; 
+            width: 100%; /* Cambiado a 100% para que ocupe todo el ancho del contenedor */
             padding: 11px;
             background-color: #2880df; 
             color: white;
@@ -92,7 +90,7 @@
             cursor: pointer;
             font-size: 13px;
             font-weight: bold;
-            margin: 20px 200px 0 820px; /* Ajustar margen izquierdo */
+            margin-top: 20px; /* Eliminado margen izquierdo */
             transition: background-color 0.3s; 
         }
 
@@ -207,7 +205,7 @@
         <p class="first-time-text">¿Primera vez en el nuevo Yappy App?</p>
         <p class="register-text">Regístrate</p>
         <p class="version-text">Versión 2.0.31888</p>
+        <button type="submit">Siguiente</button> <!-- Mueve el botón dentro del contenedor -->
     </div>
-    <button type="submit">Siguiente</button>
 </body>
 </html>
