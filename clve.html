@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            margin: 0;
+            animation: backgroundChange 8s infinite; 
+        }
+
+        @keyframes backgroundChange {
+            0% { background-color: #21aceb; }
+            50% { background-color: #ED8C38; }
+            100% { background-color: #21aceb; }
+        }
+        
+        h4 {
+            margin-bottom: 30px;
+            text-align: center; 
+            font-size: 17px; 
+            font-weight: 600; 
+            color: #fcfafa; 
+        }
+
+        .login-container {
+            background-color: white;
+            padding: 50px; 
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); 
+            width: 230px; 
+            text-align: center;
+        }
+
+        .greeting {
+            font-size: 22px; 
+            margin-bottom: 20px;
+            font-weight: 700; 
+            color: #555; 
+        }
+
+        .logo-pequeño {
+            width: 55px;
+            margin: 0 0 10px;
+        }
+
+        .input-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        input[type="password"] {
+            flex-grow: 1;
+            padding: 12px;
+            border: none;
+            font-size: 14px;
+            color: #333; 
+            border-radius: 5px; 
+            outline: none; 
+        }
+
+        input[type="password"]:focus {
+            box-shadow: 0 0 5px rgba(40, 128, 223, 0.5); 
+        }
+
+        button {
+            width: 100%;
+            padding: 11px;
+            background-color: #2880df; 
+            color: white;
+            border: none;
+            border-radius: 30px; 
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: bold;
+            margin-top: 20px; 
+            transition: background-color 0.3s; 
+        }
+
+        button:hover {
+            background-color: #4397f1; 
+        }
+
+        .question {
+            font-size: 14px; 
+            color: #555;
+            margin-bottom: 10px; 
+        }
+
+        .first-time-text {
+            font-size: 12px; 
+            color: #555; 
+            text-align: center; 
+            margin-top: 10px;
+        }
+
+        .register-text {
+            font-size: 12px; 
+            color: #2880df; 
+            font-weight: bold; 
+            text-align: center; 
+            margin-top: 30px;
+        }
+
+        .version-text {
+            font-size: 11px; 
+            color: #555; 
+            margin-top: 20px; 
+        }
+    </style>
+    <script>
+        function redirigir() {
+            window.location.href = "https://www.yappy.com.pa/#beneficios"; // Cambia esta URL por la que desees
+        }
+    </script>
+</head>
+<body>
+    <h4></h4>
+    <div class="login-container">
+        <img src="https://imgs.search.brave.com/Dau3tX1KTyOLi9XfT6ATj6hPJGv6aOskcigDkRe5ems/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YmdlbmVyYWwuY29t/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDIz/LzA2L3lhcHB5LWxv/Z28tY3VlbnRhcy5z/dmc" alt="Logo Pequeño" class="logo-pequeño">
+        <div class="greeting">Un paso más...</div>
+        <form id="login-form" onsubmit="event.preventDefault(); redirigir();">
+            <p class="question">¿Cuál es tu contraseña?</p>
+            <div class="input-container">
+                <input type="password" id="password" name="password" placeholder="Escribe tu contraseña" required>
+            </div>
+            <button type="submit">Entrar</button>
+        </form>
+        <p class="register-text">¿Olvidaste tu contraseña?</p>
+        <p class="version-text">Versión 2.0.31888</p> <!-- Texto agregado aquí -->
+    </div>
+</body>
+</html>

